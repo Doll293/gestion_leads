@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS gestion_leads;
+USE gestion_leads;
+
+CREATE TABLE IF NOT EXISTS leads (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nom VARCHAR(100) NOT NULL,
+  statut VARCHAR(50) DEFAULT 'nouveau',
+  tel VARCHAR(20),
+  adresse TEXT,
+  commentaire TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

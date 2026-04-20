@@ -1,0 +1,16 @@
+include:
+  - docker-compose.db.yml
+  - docker-compose.tools.yml
+  - docker-compose.backend.yml
+  - docker-compose.frontend.yml
+  - docker-compose.nginx.yml
+
+networks:
+  db_net:
+    driver: bridge
+  web_net:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local

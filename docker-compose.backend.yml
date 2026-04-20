@@ -1,0 +1,20 @@
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gestion-leads-backend
+    restart: unless-stopped
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: gestion_leads
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+    networks:
+      - db_net
+      - web_net

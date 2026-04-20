@@ -1,0 +1,16 @@
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: gestion-leads-frontend
+    restart: unless-stopped
+    environment:
+      - BACKEND_URL=http://backend:8081
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - web_net
